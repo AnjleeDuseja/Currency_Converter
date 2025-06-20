@@ -69,6 +69,7 @@ const convertCurrency = async (from, to, amount) => {
    
     if(response.status === 200){
        let data = await response.json();
+
        let convertedAmount=amount*data.rates[to]
        return convertedAmount;
     
@@ -83,6 +84,13 @@ convertBtn.addEventListener("click", () => {
     }
     else{
         error.innerText = "";
+        if(fromCurrencyValue === toCurrencyValue){
+            result.innerText = "Please select different currencies for conversion!";
+            result.style.color = "red";
+            result.style.fontSize = "0.75rem";
+            return;
+        }
+
       let resultVal= convertCurrency(fromCurrencyValue, toCurrencyValue, input.value);
 
       resultVal.then((value) => {
