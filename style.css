@@ -99,7 +99,7 @@ i {
   margin-top: 20px;
 }
 
-#conversion-result {
+.conversion-result {
   margin-top: 30px;
   font-size: 1.5rem;
   color: rgb(136, 2, 136);
@@ -107,7 +107,7 @@ i {
   text-align: center;
 }
 
-#error-msg {
+.error{
   color: red;
   font-size: 0.85rem;
   margin-top: 10px;

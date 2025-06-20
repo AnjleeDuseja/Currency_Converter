@@ -1,7 +1,7 @@
 let convertBtn = document.querySelector("button");
 let input = document.querySelector("input");
 let error = document.querySelector("#error-msg");
-let result = document.querySelector(".result");
+let result = document.querySelector("#result");
 let fromCurrency = document.querySelector("#from-currency");
 let toCurrency = document.querySelector("#to-currency");
 let fromCurrencyValue = "USD"
@@ -86,14 +86,14 @@ convertBtn.addEventListener("click", () => {
         error.innerText = "";
         if(fromCurrencyValue === toCurrencyValue){
             result.innerText = "Please select different currencies for conversion!";
-            result.style.color = "red";
-            result.style.fontSize = "0.75rem";
+            result.classList.add("error");
             return;
         }
 
       let resultVal= convertCurrency(fromCurrencyValue, toCurrencyValue, input.value);
 
       resultVal.then((value) => {
+        result.classList.remove("error");
           result.innerText = `${input.value} ${fromCurrencyValue} = ${value.toFixed(2)} ${toCurrencyValue}`;
       }).catch((err) => {
           result.innerText = "Error converting currency!";
