@@ -40,7 +40,7 @@ The app features:
 
 ## 🔗 Live Demo
 
-👉 [**Try it here**](#) 
+👉 [**Try it here**](https://anjleeduseja.github.io/Currency_Converter/) 
 
 ---
 
